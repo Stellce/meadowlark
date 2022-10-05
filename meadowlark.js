@@ -7,6 +7,16 @@ const fortune = require('./lib/fortune.js')
 
 const app = express()
 
+const handlers = require('./lib/handlers.js')
+
+// app.get('/', handlers.home)
+
+// app.get('/about', handlers.about)
+
+// app.use(handlers.notFound)
+
+// app.use(handlers.serverError)
+
 //configure Handlebars view engine
 app.engine('handlebars', expressHandlebars.engine({
   defaultLayout: 'main',
@@ -40,5 +50,5 @@ app.use((err, req, res, next) => {
 
 app.listen(port, () => console.log(
   `Express started on http://localhost:${port};\n` +
-  'Press Ctrl+C to terminate...'))
-
+  'Press Ctrl+C to terminate...'
+))
